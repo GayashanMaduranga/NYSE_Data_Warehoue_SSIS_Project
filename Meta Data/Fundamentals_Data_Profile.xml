@@ -1,0 +1,3498 @@
+<?xml version="1.0"?>
+<DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
+  <ProfileVersion>1.0</ProfileVersion>
+  <DataSources>
+    <DtsDataSource ID="{35D6C290-F98F-4569-ACA8-D3BC60E5BAE8}" Name="Fundamentals_Data_Profile.xml">
+      <DtsConnectionManagerID>Fundamentals_Data_Profile.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{645CD793-BD55-4891-9FEA-7434B7E1CF35}" Name="LocalHost.NYSE_DW">
+      <DtsConnectionManagerID>LocalHost.NYSE_DW</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{83A7C8C3-3C66-4FC8-A8F4-EB3E626EFB72}" Name="Securities_Data_Profile.xml">
+      <DtsConnectionManagerID>Securities_Data_Profile.xml</DtsConnectionManagerID>
+    </DtsDataSource>
+  </DataSources>
+  <DataProfileInput>
+    <ProfileMode>Exact</ProfileMode>
+    <Timeout>0</Timeout>
+    <Requests>
+      <ColumnNullRatioProfileRequest ID="NullRatioReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <Column IsWildCard="true" />
+      </ColumnNullRatioProfileRequest>
+      <ColumnStatisticsProfileRequest ID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <Column IsWildCard="true" />
+      </ColumnStatisticsProfileRequest>
+      <ColumnLengthDistributionProfileRequest ID="LengthDistReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <Column IsWildCard="true" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+      </ColumnLengthDistributionProfileRequest>
+      <ColumnValueDistributionProfileRequest ID="ValueDistReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <Column IsWildCard="true" />
+        <Option>FrequentValues</Option>
+        <FrequentValueThreshold>0.001</FrequentValueThreshold>
+      </ColumnValueDistributionProfileRequest>
+      <CandidateKeyProfileRequest ID="KeyReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <KeyColumns>
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+        </KeyColumns>
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <KeyStrengthThreshold>0.95</KeyStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </CandidateKeyProfileRequest>
+      <FunctionalDependencyProfileRequest ID="FDReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table Schema="stg" Table="FundamentalsStaging" />
+        <DeterminantColumns>
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+          <Column IsWildCard="true" />
+        </DeterminantColumns>
+        <DependentColumn IsWildCard="true" />
+        <ThresholdSetting>Specified</ThresholdSetting>
+        <FDStrengthThreshold>0.95</FDStrengthThreshold>
+        <VerifyOutputInFastMode>false</VerifyOutputInFastMode>
+        <MaxNumberOfViolations>100</MaxNumberOfViolations>
+      </FunctionalDependencyProfileRequest>
+    </Requests>
+  </DataProfileInput>
+  <DataProfileOutput>
+    <Profiles>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="F1" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Ticker Symbol" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Period Ending" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Accounts Payable" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Accounts Receivable" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Add'l income/expense items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="After Tax ROE" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Capital Expenditures" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Capital Surplus" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cash Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>299</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cash and Cash Equivalents" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Changes in Inventories" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Common Stocks" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cost of Revenue" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Current Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>299</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Deferred Asset Charges" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Deferred Liability Charges" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Depreciation" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Before Interest and Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Before Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Effect of Exchange Rate" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Equity Earnings/Loss Unconsolidated Subsidiary" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Fixed Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Goodwill" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Gross Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Gross Profit" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Income Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Intangible Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Interest Expense" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Inventory" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Long-Term Debt" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Long-Term Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Minority Interest" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Misc# Stocks" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Borrowings" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flow" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flow-Operating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flows-Financing" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flows-Investing" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income Adjustments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income Applicable to Common Shareholders" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income-Cont# Operations" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Receivables" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Non-Recurring Items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Operating Income" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Operating Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Current Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Current Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Financing Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Investing Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Operating Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Operating Items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Pre-Tax Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Pre-Tax ROE" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Profit Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Quick Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>299</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Research and Development" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Retained Earnings" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Sale and Purchase of Stock" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Sales, General and Admin#" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Short-Term Debt / Current Portion of Long-Term Debt" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Short-Term Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Current Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Current Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Liabilities &amp; Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Revenue" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Treasury Stock" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>0</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="For Year" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>173</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Per Share" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>219</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnNullRatioProfile ProfileRequestID="NullRatioReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Estimated Shares Outstanding" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NullCount>219</NullCount>
+      </ColumnNullRatioProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="F1" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>1780</MaxValue>
+        <Mean>890</Mean>
+        <StdDev>514.130333670364</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Period Ending" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2003-06-30T00:00:00.0000000</MinValue>
+        <MaxValue>2017-01-01T00:00:00.0000000</MaxValue>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Accounts Payable" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>206939000000</MaxValue>
+        <Mean>4673417755.75519</Mean>
+        <StdDev>14056524912.4511</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Accounts Receivable" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-6452000000</MinValue>
+        <MaxValue>22664000000</MaxValue>
+        <Mean>-63534842.22347</Mean>
+        <StdDev>756067085.10245</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Add'l income/expense items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-6768000000</MinValue>
+        <MaxValue>14162000000</MaxValue>
+        <Mean>69089399.2139248</Mean>
+        <StdDev>684622049.759397</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="After Tax ROE" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>5789</MaxValue>
+        <Mean>43.6013475575519</Mean>
+        <StdDev>233.858347154508</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Capital Expenditures" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-37985000000</MinValue>
+        <MaxValue>5000000</MaxValue>
+        <Mean>-1251924663.11061</Mean>
+        <StdDev>2979126246.9526</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Capital Surplus" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-721500000</MinValue>
+        <MaxValue>108288000000</MaxValue>
+        <Mean>5351783833.23975</Mean>
+        <StdDev>11336587517.0619</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cash Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>1041</MaxValue>
+        <Mean>74.4574898785425</Mean>
+        <StdDev>102.263854641652</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cash and Cash Equivalents" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>21000</MinValue>
+        <MaxValue>728111000000</MaxValue>
+        <Mean>8521399416.05839</Mean>
+        <StdDev>54305793753.6796</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Changes in Inventories" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-5562000000</MinValue>
+        <MaxValue>3755000000</MaxValue>
+        <Mean>-67877487.3666479</Mean>
+        <StdDev>390227286.917036</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Common Stocks" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>158142000000</MaxValue>
+        <Mean>1608543028.6356</Mean>
+        <StdDev>9175058844.26529</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Cost of Revenue" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>365086000000</MaxValue>
+        <Mean>12352127003.9304</Mean>
+        <StdDev>30405652077.0965</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Current Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>17</MinValue>
+        <MaxValue>1197</MaxValue>
+        <Mean>186.771255060729</Mean>
+        <StdDev>128.023586767713</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Deferred Asset Charges" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>36860000000</MaxValue>
+        <Mean>590802036.49635</Mean>
+        <StdDev>2665994970.45218</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Deferred Liability Charges" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>56181000000</MaxValue>
+        <Mean>1610768637.28243</Mean>
+        <StdDev>4547353149.33884</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Depreciation" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-448000000</MinValue>
+        <MaxValue>29517000000</MaxValue>
+        <Mean>1084239005.61482</Mean>
+        <StdDev>2187685337.26441</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Before Interest and Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-27927000000</MinValue>
+        <MaxValue>79053000000</MaxValue>
+        <Mean>2710101856.26053</Mean>
+        <StdDev>6143619682.75635</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Before Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-28226000000</MinValue>
+        <MaxValue>78726000000</MaxValue>
+        <Mean>2375332563.16676</Mean>
+        <StdDev>5719186029.83232</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Effect of Exchange Rate" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-3067000000</MinValue>
+        <MaxValue>1160000000</MaxValue>
+        <Mean>-38490982.5940483</Mean>
+        <StdDev>162627830.34578</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Equity Earnings/Loss Unconsolidated Subsidiary" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1633000000</MinValue>
+        <MaxValue>15010000000</MaxValue>
+        <Mean>91342970.8029197</Mean>
+        <StdDev>724280650.541729</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Fixed Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>252668000000</MaxValue>
+        <Mean>8533624075.23863</Mean>
+        <StdDev>19275926787.8161</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Goodwill" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>104568000000</MaxValue>
+        <Mean>3929823106.12016</Mean>
+        <StdDev>7923954867.68333</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Gross Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>100</MaxValue>
+        <Mean>46.7630544637844</Mean>
+        <StdDev>25.4317243754195</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Gross Profit" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-12647000000</MinValue>
+        <MaxValue>149453000000</MaxValue>
+        <Mean>7189009793.93599</Mean>
+        <StdDev>13603963883.6271</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Income Tax" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-8013000000</MinValue>
+        <MaxValue>31045000000</MaxValue>
+        <Mean>669390312.184166</Mean>
+        <StdDev>1829626017.50326</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Intangible Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>120710000000</MaxValue>
+        <Mean>1964418440.76362</Mean>
+        <StdDev>6799863897.80865</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Interest Expense" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>20612000000</MaxValue>
+        <Mean>326271202.133633</Mean>
+        <StdDev>1053969485.84026</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Inventory" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>47257000000</MaxValue>
+        <Mean>1467160421.11173</Mean>
+        <StdDev>3706513192.70178</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-165094000000</MinValue>
+        <MaxValue>38348000000</MaxValue>
+        <Mean>-967900481.751825</Mean>
+        <StdDev>7967771874.4483</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-40168000000</MinValue>
+        <MaxValue>37103000000</MaxValue>
+        <Mean>178972134.194273</Mean>
+        <StdDev>2378890527.16083</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Long-Term Debt" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>429194000000</MaxValue>
+        <Mean>8477305373.94722</Mean>
+        <StdDev>27499125588.6455</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Long-Term Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>1652057000000</MaxValue>
+        <Mean>23214762012.3526</Mean>
+        <StdDev>139211427629.052</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Minority Interest" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-105000000</MinValue>
+        <MaxValue>63191000000</MaxValue>
+        <Mean>416671271.75744</Mean>
+        <StdDev>3181695232.46566</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Misc# Stocks" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-151000000</MinValue>
+        <MaxValue>3713000000</MaxValue>
+        <Mean>42436179.6743403</Mean>
+        <StdDev>184414809.916495</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Borrowings" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-99088000000</MinValue>
+        <MaxValue>49707000000</MaxValue>
+        <Mean>515541227.961819</Mean>
+        <StdDev>5383208070.75788</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flow" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-42930000000</MinValue>
+        <MaxValue>50435000000</MaxValue>
+        <Mean>52732548.5682201</Mean>
+        <StdDev>2269479528.72468</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flow-Operating" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-16056000000</MinValue>
+        <MaxValue>107953000000</MaxValue>
+        <Mean>3257625846.71533</Mean>
+        <StdDev>7395486378.15253</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flows-Financing" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-187511000000</MinValue>
+        <MaxValue>118228000000</MaxValue>
+        <Mean>-457640640.65132</Mean>
+        <StdDev>9048347286.96438</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Cash Flows-Investing" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-165636000000</MinValue>
+        <MaxValue>106980000000</MaxValue>
+        <Mean>-2717598897.81022</Mean>
+        <StdDev>10600467754.7153</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-23528000000</MinValue>
+        <MaxValue>53394000000</MaxValue>
+        <Mean>1705516588.99495</Mean>
+        <StdDev>3992279465.82636</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income Adjustments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-58098000000</MinValue>
+        <MaxValue>17223000000</MaxValue>
+        <Mean>219845736.103313</Mean>
+        <StdDev>2662875549.86375</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income Applicable to Common Shareholders" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-23119000000</MinValue>
+        <MaxValue>53394000000</MaxValue>
+        <Mean>1687810053.9023</Mean>
+        <StdDev>3955879553.60227</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Income-Cont# Operations" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-22757000000</MinValue>
+        <MaxValue>59890000000</MaxValue>
+        <Mean>1748058844.4694</Mean>
+        <StdDev>4333643028.4033</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Net Receivables" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>92819000000</MaxValue>
+        <Mean>3242125638.96687</Mean>
+        <StdDev>7652452384.5571</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Non-Recurring Items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-2523900000</MinValue>
+        <MaxValue>20898000000</MaxValue>
+        <Mean>218483965.188097</Mean>
+        <StdDev>1214842835.56669</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Operating Income" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-27910000000</MinValue>
+        <MaxValue>71230000000</MaxValue>
+        <Mean>2268979510.94891</Mean>
+        <StdDev>5060022983.31034</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Operating Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>437</MaxValue>
+        <Mean>18.1779898933184</Mean>
+        <StdDev>20.4984021398864</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>325570000000</MaxValue>
+        <Mean>4859873623.24537</Mean>
+        <StdDev>25167637701.2485</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Current Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>35090000000</MaxValue>
+        <Mean>607051338.573835</Mean>
+        <StdDev>1586171282.37398</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Current Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>1363427000000</MaxValue>
+        <Mean>15008140650.758</Mean>
+        <StdDev>108520680102.41</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-29607000000</MinValue>
+        <MaxValue>36776000000</MaxValue>
+        <Mean>-620754596.294217</Mean>
+        <StdDev>3052814890.33945</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Financing Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-95036000000</MinValue>
+        <MaxValue>89637000000</MaxValue>
+        <Mean>484440422.2347</Mean>
+        <StdDev>6515045142.89151</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Investing Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-56717000000</MinValue>
+        <MaxValue>11602000000</MaxValue>
+        <Mean>-405414057.832678</Mean>
+        <StdDev>3186741613.42232</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>766245000000</MaxValue>
+        <Mean>9077173281.86412</Mean>
+        <StdDev>53418830028.6191</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Operating Activities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-33666000000</MinValue>
+        <MaxValue>87507000000</MaxValue>
+        <Mean>7145331.27456485</Mean>
+        <StdDev>3290443726.54023</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Other Operating Items" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-87159000</MinValue>
+        <MaxValue>54872000000</MaxValue>
+        <Mean>868762348.119034</Mean>
+        <StdDev>2903748919.82439</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Pre-Tax Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>442</MaxValue>
+        <Mean>17.7546322290848</Mean>
+        <StdDev>21.3736021084003</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Pre-Tax ROE" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>9089</MaxValue>
+        <Mean>59.6445816956766</Mean>
+        <StdDev>330.354647555116</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Profit Margin" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>369</MaxValue>
+        <Mean>13.957888826502</Mean>
+        <StdDev>17.5547246002322</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Quick Ratio" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>10</MinValue>
+        <MaxValue>1197</MaxValue>
+        <Mean>146.952766531714</Mean>
+        <StdDev>118.585098428383</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Research and Development" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>12740000000</MaxValue>
+        <Mean>350272426.726558</Mean>
+        <StdDev>1233609238.12103</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Retained Earnings" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-19900545000</MinValue>
+        <MaxValue>412444000000</MaxValue>
+        <Mean>9206811334.08198</Mean>
+        <StdDev>25474135314.8564</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Sale and Purchase of Stock" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-58852000000</MinValue>
+        <MaxValue>5410000000</MaxValue>
+        <Mean>-765204288.601909</Mean>
+        <StdDev>2747064427.95697</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Sales, General and Admin#" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-487000000</MinValue>
+        <MaxValue>97041000000</MaxValue>
+        <Mean>3980865752.94778</Mean>
+        <StdDev>9062837431.44428</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Short-Term Debt / Current Portion of Long-Term Debt" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>323990000000</MaxValue>
+        <Mean>3054998104.43571</Mean>
+        <StdDev>21175257848.3182</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Short-Term Investments" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>106730000000</MaxValue>
+        <Mean>1123632265.58113</Mean>
+        <StdDev>5701980813.47201</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2705000</MinValue>
+        <MaxValue>2572274000000</MaxValue>
+        <Mean>55709207167.8832</Mean>
+        <StdDev>203301865133.297</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Current Assets" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>139660000000</MaxValue>
+        <Mean>6726348593.48681</Mean>
+        <StdDev>13444224510.4154</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Current Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>0</MinValue>
+        <MaxValue>90281000000</MaxValue>
+        <Mean>4699918938.79843</Mean>
+        <StdDev>9536153758.49164</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-13244000000</MinValue>
+        <MaxValue>256205000000</MaxValue>
+        <Mean>11888455635.598</Mean>
+        <StdDev>25837033038.3533</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Liabilities" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2577000</MinValue>
+        <MaxValue>2340547000000</MaxValue>
+        <Mean>43804202904.548</Mean>
+        <StdDev>181652845982.011</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Liabilities &amp; Equity" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>2705000</MinValue>
+        <MaxValue>2572274000000</MaxValue>
+        <Mean>55692658540.146</Mean>
+        <StdDev>203304148053.257</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Total Revenue" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1514000</MinValue>
+        <MaxValue>485651000000</MaxValue>
+        <Mean>20291543427.8495</Mean>
+        <StdDev>40942053320.3779</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Treasury Stock" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-229734000000</MinValue>
+        <MaxValue>0</MaxValue>
+        <Mean>-3951522290.28636</Mean>
+        <StdDev>14066517303.7813</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="For Year" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>1215</MinValue>
+        <MaxValue>2016</MaxValue>
+        <Mean>2013.30534825871</Mean>
+        <StdDev>19.9469301183783</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Earnings Per Share" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-61.2</MinValue>
+        <MaxValue>50.09</MaxValue>
+        <Mean>3.35370678617158</Mean>
+        <StdDev>4.69439212394804</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnStatisticsProfile IsExact="true" ProfileRequestID="StatisticsReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Estimated Shares Outstanding" SqlDbType="Float" MaxLength="0" Precision="53" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <MinValue>-1513945000</MinValue>
+        <MaxValue>16107692307.7</MaxValue>
+        <Mean>602424367.653979</Mean>
+        <StdDev>1142218855.93839</StdDev>
+      </ColumnStatisticsProfile>
+      <ColumnLengthDistributionProfile ProfileRequestID="LengthDistReq" IsExact="true">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Ticker Symbol" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
+        <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
+        <MinLength>1</MinLength>
+        <MaxLength>5</MaxLength>
+        <LengthDistribution>
+          <LengthDistributionItem>
+            <Length>3</Length>
+            <Count>1156</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>1</Length>
+            <Count>36</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>4</Length>
+            <Count>405</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>5</Length>
+            <Count>8</Count>
+          </LengthDistributionItem>
+          <LengthDistributionItem>
+            <Length>2</Length>
+            <Count>176</Count>
+          </LengthDistributionItem>
+        </LengthDistribution>
+      </ColumnLengthDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Ticker Symbol" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>448</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>AAL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AAP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AAPL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ABBV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ABC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ABT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ADBE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ADI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ADM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ADS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ADSK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AEE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AEP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AFL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AIG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AIV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AIZ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AJG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AKAM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ALB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ALK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ALL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ALLE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ALXN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMAT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AME</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMGN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AMZN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ANTM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AON</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>APA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>APC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>APD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>APH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ARNC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ATVI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AVB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AVGO</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AVY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AWK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AXP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AYI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>AZO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BAC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BAX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BBBY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BBT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BBY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BCR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BDX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BHI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BIIB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BLL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BMY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BSX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BWA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>BXP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>C</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CAG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CAH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CAT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CBG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CCI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CCL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CELG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CERN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CFG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CHD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CHK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CHRW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CHTR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CINF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CLX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CMA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CME</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CMG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CMI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CMS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CNC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CNP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COST</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>COTY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CPB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CRM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CSCO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CSRA</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CSX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CTAS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CTL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CTSH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CTXS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CVS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CVX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>CXO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>D</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DAL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DFS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DGX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DHI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DHR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DIS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DISCA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DISCK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DLPH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DLR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DLTR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DNB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DOV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DPS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DRI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DUK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DVA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>DVN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EBAY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ECL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ED</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EFX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EIX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EMN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EMR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EOG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EQIX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EQR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EQT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ES</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ESS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ETFC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ETN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ETR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EXC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EXPD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EXPE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>EXR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>F</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FAST</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FBHS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FCX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FDX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FFIV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FIS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FISV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FLIR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FLR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FLS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FMC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FRT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FSLR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>FTR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GGP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GILD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GIS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GLW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GPC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GPN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GPS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GRMN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>GWW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HAL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HAR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HAS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HBAN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HBI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HCA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HCN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HCP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HES</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HIG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HOG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HOLX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HON</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HPE</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HPQ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HRB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HRL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HRS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HSIC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HST</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HSY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>HUM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IBM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IDXX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IFF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ILMN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>INTC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>INTU</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IPG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IRM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ISRG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ITW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>IVZ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>JBHT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>JEC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>JNPR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>JPM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>JWN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>K</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KEY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KIM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KLAC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KMB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KMI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KMX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KORS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KSS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>KSU</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LEG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LEN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LKQ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LLL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LLTC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LLY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LMT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LNT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LOW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LRCX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LUK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LUV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LVLT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>LYB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>M</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MAA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MAC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MAR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MAS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MAT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MCD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MCHP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MCK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MCO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MDLZ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MET</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MHK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MJN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MKC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MLM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MMC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MMM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MNST</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MON</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MOS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MPC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MRK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MRO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MSFT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MTB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MTD</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MU</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MUR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>MYL</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NAVI</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NBL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NDAQ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NEE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NEM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NFLX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NFX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NKE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NLSN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NOV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NSC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NTAP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NTRS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NUE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NVDA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NWL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NWS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>NWSA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>O</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>OKE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>OMC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ORLY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>OXY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PAYX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PBCT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PBI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PCAR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PCG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PCLN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PDCO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PEG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PEP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PFE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PFG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PGR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PHM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PKI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PNC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PNR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PNW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PPG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PPL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PRU</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PSX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PVH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PWR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>PYPL</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>QCOM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>QRVO</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>R</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RCL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>REGN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RHI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RHT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ROK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ROP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ROST</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RRC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>RSG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SBUX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SCG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SCHW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SEE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SHW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SIG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SJM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SLG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SNA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SNI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SPG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SPGI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SPLS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SRCL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SRE</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>STI</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>STT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>STX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>STZ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SWK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SWKS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SWN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SYF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SYK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SYMC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>SYY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>T</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TAP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TDC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TDG</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TEL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TGNA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TGT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TIF</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TJX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TMK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TMO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TRIP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TRV</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TSCO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TSN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TSO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TSS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TXN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>TXT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UAA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UAL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UDR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UHS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ULTA</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UNH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UNM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UNP</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UPS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>URBN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>USB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>UTX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>V</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VAR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VFC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VIAB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VLO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VMC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VNO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VRSK</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VRSN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VRTX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VTR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>VZ</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WAT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WDC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WEC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WFC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WFM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WHR</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WLTW</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WMB</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WMT</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WRK</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WU</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WYN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>WYNN</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XEC</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XEL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XLNX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XOM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XRAY</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XRX</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>XYL</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>YHOO</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>YUM</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ZBH</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ZION</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>ZTS</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <ColumnValueDistributionProfile IsExact="true" ProfileRequestID="ValueDistReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <Column Name="Period Ending" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        <NumberOfDistinctValues>162</NumberOfDistinctValues>
+        <ValueDistribution>
+          <ValueDistributionItem>
+            <Value>2014-02-01T00:00:00.0000000</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-12-26T00:00:00.0000000</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-10-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-02-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-08-31T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-05-31T00:00:00.0000000</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-01-31T00:00:00.0000000</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-05-31T00:00:00.0000000</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-06-27T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-09-27T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-10-01T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-12-27T00:00:00.0000000</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-11-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-10-27T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-09-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-12-29T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-05-31T00:00:00.0000000</Value>
+            <Count>8</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-04-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-04-01T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-02-28T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-06-30T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-10-31T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2012-12-30T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-11-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-01-29T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-12-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-07-31T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-09-29T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-10-26T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-04-30T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-05-29T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-03-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-08-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-04-02T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-10-03T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-01-30T00:00:00.0000000</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-01-03T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2012-12-31T00:00:00.0000000</Value>
+            <Count>225</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-02-02T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-07-31T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-10-31T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-04-30T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-09-26T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-01-31T00:00:00.0000000</Value>
+            <Count>19</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-05-26T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-07-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-02-03T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-09-30T00:00:00.0000000</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-08-31T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-03-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-12-31T00:00:00.0000000</Value>
+            <Count>317</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-05-31T00:00:00.0000000</Value>
+            <Count>5</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-10-31T00:00:00.0000000</Value>
+            <Count>6</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-02-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-06-30T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-09-27T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-10-02T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-01-02T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-05-25T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-02-01T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-03-29T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-03-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2012-12-29T00:00:00.0000000</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-01-31T00:00:00.0000000</Value>
+            <Count>7</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-06-30T00:00:00.0000000</Value>
+            <Count>11</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-10-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-07-03T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-11-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-02-01T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-09-24T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-06-30T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-09-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-09-30T00:00:00.0000000</Value>
+            <Count>18</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-04-03T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-02-29T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-01-30T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-09-30T00:00:00.0000000</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-12-28T00:00:00.0000000</Value>
+            <Count>13</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-08-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-09-27T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-06-28T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-06-29T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-03-28T00:00:00.0000000</Value>
+            <Count>4</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-02-02T00:00:00.0000000</Value>
+            <Count>14</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-07-01T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-09-25T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-03-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-09-26T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-12-31T00:00:00.0000000</Value>
+            <Count>97</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-03-31T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-06-28T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-09-30T00:00:00.0000000</Value>
+            <Count>13</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2013-12-31T00:00:00.0000000</Value>
+            <Count>316</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-10-03T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-01-03T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2015-12-31T00:00:00.0000000</Value>
+            <Count>317</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-11-30T00:00:00.0000000</Value>
+            <Count>3</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-04-30T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2016-01-31T00:00:00.0000000</Value>
+            <Count>9</Count>
+          </ValueDistributionItem>
+          <ValueDistributionItem>
+            <Value>2014-07-31T00:00:00.0000000</Value>
+            <Count>2</Count>
+          </ValueDistributionItem>
+        </ValueDistribution>
+      </ColumnValueDistributionProfile>
+      <CandidateKeyProfile IsExact="true" ProfileRequestID="KeyReq">
+        <DataSourceID>{645CD793-BD55-4891-9FEA-7434B7E1CF35}</DataSourceID>
+        <Table DataSource="." Database="NYSE_DW" Schema="stg" Table="FundamentalsStaging" RowCount="1781" />
+        <KeyColumns>
+          <Column Name="Ticker Symbol" SqlDbType="NVarChar" MaxLength="255" Precision="255" Scale="255" LCID="1033" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+          <Column Name="Period Ending" SqlDbType="DateTime" MaxLength="0" Precision="255" Scale="255" LCID="-1" CodePage="0" IsNullable="true" StringCompareOptions="0" />
+        </KeyColumns>
+        <IsExactKey>true</IsExactKey>
+      </CandidateKeyProfile>
+    </Profiles>
+  </DataProfileOutput>
+</DataProfile>
